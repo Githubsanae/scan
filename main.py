@@ -5,6 +5,7 @@ import time
 tx=""
 while True:
     price =get_price(tx)
+    print("获取中")
     time.sleep(0.3)
     if price<50:
         text=f"xxx当前价格:{price}"
