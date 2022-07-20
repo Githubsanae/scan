@@ -19,12 +19,16 @@ def get_price(tx):
           "only_on_shelf":True,
           "user_index":1656911262664
     }
-
-    con=requests.get("https://api.ddpurse.com/phoenix/user_nft/nft_intl_get_album_list",headers=header,json=json_data)
-    con=con.text
-    con=json.loads(con)
-    re_price=con["data"]["items"][0]["money_label"]
-    return re_price
+    try:
+        con=requests.get("https://api.ddpurse.com/phoenix/user_nft/nft_intl_get_album_list",headers=header,json=json_data)
+        con=con.text
+        con=json.loads(con)
+        re_price=con["data"]["items"][0]["money_label"]
+        return re_price
+    except TypeError:
+        return 0
 if __name__ == '__main__':
+
     s=get_price("e318e781bc3119e957640495e507e3235b05a781147ff48400cdeb4a2f2bd6db")
     print(s)
+
