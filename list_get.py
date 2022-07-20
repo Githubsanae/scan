@@ -13,13 +13,13 @@ def list_get():
         # "device-id": "f60da01dbf77ad5e",
         "host": "api.ddpurse.com",
         "content-type": "application/json; charset\u003dutf-8",
-        "app-version": "1.7.5"
+        "app-version": "1.8.0"
     }
 
     body={
         "page":1,
         "page_size":1000,
-        "filter":{"status":"on-shelf","keyword":"","type":"","category_id":"61a5e80ade90460001431098","user_id":"","without_user_index":False}
+        "filter":{"status":"on-shelf","keyword":"","type":"","category_id":"6267b1f3319840000108ca65","user_id":"","without_user_index":False}
     }
 
     response = requests.post("https://api.ddpurse.com/phoenix/public/nft_intl_get_work_group_list",json=body)
