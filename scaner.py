@@ -6,7 +6,7 @@ def scaner(tx,name,min_price):
     while True:
         price =get_price(tx)
         print(f"获取中,{name}当前价格为{price}")
-        time.sleep(20)
+        time.sleep(45)
         if price<min_price:
             text=f"{name}当前价格:{price}"
             send_email(text)
