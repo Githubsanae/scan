@@ -11,7 +11,8 @@ def get_price(tx):
         "content-length": "160",
         "authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiIxM2YzNmE5N2YwMjUwYmMyZWUxMjhiNTcyYjg1ZmFhNCIsImV4cCI6MTY1ODM5MTYyNCwianRpIjoiMTU1MDAwMjczNjM3NjU5NDQzMiIsInN1YiI6IjE1NTAwMDI3MjY0MzQ4MDM3MTIiLCJzY29wZSI6InVzZXIuYWxsIn0.l4acanfdrSxzQNx9StHXP4-z76qYH9sztaRmL4Q59VcPlokzg5nuH9CnAfJsmHRpPWlwD6YpbcoLGGKbX352PA",
         "host": "api.ddpurse.com",
-        "content-type": "application/json; charset\u003dutf-8",
+        "content-type": "application/json; charset=utf-8",
+        "app - version": "1.8.0"
     }
     json_data={
             "page":1,
