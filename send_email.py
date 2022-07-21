@@ -21,6 +21,6 @@ def send_email(text)->str:
         s.login(sender,authcode)
         s.sendmail(sender,receivers,msg.as_string())
     except Exception:
-        pass
+        print("邮件发送出错")
 if __name__ == '__main__':
     send_email("kutori")
