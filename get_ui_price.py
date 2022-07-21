@@ -27,7 +27,8 @@ def get_ui_price(hash_value,type_value):
     re_dict={}
     for i in data["data"]["items"] :
         # print(i["nft_info"]["name"],i["nft_info"]["fiat_price_range"])
-        re_dict[i["nft_info"]["name"]]=float((i["nft_info"]["fiat_price_range"]).split()[0])
+        # re_dict[i["nft_info"]["name"]]=eval((i["nft_info"]["fiat_price_range"]).split()[0])
+        re_dict[i["nft_info"]["name"]]=i["nft_info"]["fiat_price_range"]
     return re_dict
 if __name__ == '__main__':
     print(get_ui_price("","recommend"))
