@@ -1,3 +1,5 @@
+from random import randint
+
 from get_price import get_price
 from send_email import send_email
 import time
@@ -6,7 +8,7 @@ def scaner(tx,name,min_price):
     while True:
         price =get_price(tx)
         print(f"获取中,{name}当前价格为{price}")
-        time.sleep(45)
+        time.sleep(randint(40,50))
         if price<min_price:
             text=f"{name}当前价格:{price}"
             send_email(text)
