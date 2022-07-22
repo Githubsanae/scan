@@ -18,7 +18,7 @@ def get_ui_price(hash_value,type_value):
 
     body={
         "page":1,
-        "page_size":1000,
+        "page_size":1500,
         "filter":{"status":"on-shelf","keyword":"","type":f"{type_value}","category_id":f"{hash_value}","user_id":"","without_user_index":False}
     }
 

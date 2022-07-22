@@ -34,7 +34,8 @@ def run():
   '未羊': 600.0,
   '亥猪': 600.0,
   '酉鸡': 600.0,
-  '戌狗': 600.0
+  '戌狗': 600.0,
+  '《折翼天使》':500
 }
     data=get_ui_price("6267b1f3319840000108ca65","")
     for key,value in data.items():
@@ -55,7 +56,7 @@ def get_sort_image():
 def task1():
     while True:
         run()
-        time.sleep(random.randint(10,20))
+        time.sleep(random.randint(5,12))
 def task2():
     while True:
         get_sort_image()
