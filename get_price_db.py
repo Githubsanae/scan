@@ -1,6 +1,5 @@
 import json
 import time
-
 import pymysql
 import requests
 from pymysql import ProgrammingError, OperationalError
@@ -108,7 +107,7 @@ def run():
         try:
             add_time_price(time_obj)
             print('获取中')
-            time.sleep(20)
+            time.sleep(30)
         except:
             run()
 if __name__ == '__main__':
