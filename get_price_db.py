@@ -66,7 +66,7 @@ def add_db(name,db, cursor):
         sql=f" ALTER TABLE activities ADD `{name}` double"
         cursor.execute(sql)
 def sql_create(time_obj):
-    system_time=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+    system_time=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()+8*3600))
     nft_info=get_ui_price("6267b1f3319840000108ca65","",time_obj)
     name=str(list(nft_info.keys())).replace('\'',"`").replace('[','').replace(']','').replace(' ','').replace("\\","")
     price=str(list(nft_info.values())).replace('\'',"").replace('[','').replace(']','').replace(' ','')
@@ -100,6 +100,7 @@ def get_ui_price(hash_value,type_value,time_obj):
         # re_dict[i["nft_info"]["name"]]=i["nft_info"]["fiat_price_range"]
     return re_dict
 def run():
+    print('开始运行')
     judge_time=time.time()
     rates=exchange_rate_query()
     time_obj=TimeJudge(judge_time,rates)
