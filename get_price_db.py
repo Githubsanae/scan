@@ -107,7 +107,7 @@ def run():
         try:
             add_time_price(time_obj)
             print('获取中')
-            time.sleep(30)
+            time.sleep(15)
         except:
             run()
 if __name__ == '__main__':
