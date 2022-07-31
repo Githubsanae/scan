@@ -39,11 +39,11 @@ def list_create(tup):
         list_temp.append(i[0])
     return list_temp
 def con_db():
-    db = pymysql.connect(host='23.94.123.133',
+    db = pymysql.connect(host='gz-cynosdbmysql-grp-3zc42dgb.sql.tencentcdb.com',
                          user='root',
-                         port=3306,
-                         password='wml99999',
-                         database='kutori')
+                         port=26070,
+                         password='Wml99999',
+                         database='sanae')
     cursor = db.cursor()
     return db,cursor
 def repeated_query(judge,db, cursor):
@@ -62,7 +62,7 @@ def add_columns(db,cursor,nft_info):
         print(key.replace(" ",""))
 def add_db(name,db, cursor):
     if not repeated_query(name,db, cursor) :
-        sql=f" ALTER TABLE activities ADD `{name}` double"
+        sql=f" ALTER TABLE activities ADD `{name}` FLOAT"
         cursor.execute(sql)
 def sql_create(time_obj):
     system_time=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()+8*3600))
