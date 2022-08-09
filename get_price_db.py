@@ -2,7 +2,9 @@ import json
 import time
 import pymysql
 import requests
+import func_timeout
 from pymysql import ProgrammingError, OperationalError
+from func_timeout import func_set_timeout
 
 
 class TimeJudge:
@@ -71,6 +73,7 @@ def sql_create(time_obj):
     price=str(list(nft_info.values())).replace('\'',"").replace('[','').replace(']','').replace(' ','')
     sql = f"INSERT INTO activities(时间,{name}) value ('{system_time}',{price})"
     return sql,nft_info
+@func_set_timeout(10)
 def add_time_price(time_obj):
     db, cursor = con_db()
     sql,nft_info=sql_create(time_obj)
@@ -108,7 +111,11 @@ def run():
             add_time_price(time_obj)
             print('获取中')
             time.sleep(15)
+        except func_timeout.exceptions.FunctionTimedOut:
+            print('函数超时Timeout')
+            run()
         except:
+            print('未知错误重启')
             run()
 if __name__ == '__main__':
     run()
